@@ -1,0 +1,72 @@
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" #specificDivId>
+
+        <div class="container">
+
+            <h2 class="text"> My Guide In Tunisia</h2>
+
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+
+                    <li class="nav-item">
+                        <div class="nav-link" (click)="gotoservice()">Services</div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" (click)="gotoportfolio()">Offres</div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" (click)="gotoabout()">About Us</div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" (click)="gotologin()">Login</div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" (click)="gotosign()  ">Sign Up</div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" (click)="gotocontact()">Avis</div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" (click)="gotodemande()">Search </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" (click)="gotodemande()"> <svg xmlns="http://www.w3.org/2000/svg"
+                                width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" (click)="gotohome()"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" fill="currentColor" class="bi bi-houses" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.793 1a1 1 0 0 1 1.414 0l.647.646a.5.5 0 1 1-.708.708L6.5 1.707 2 6.207V12.5a.5.5 0 0 0 .5.5.5.5 0 0 1 0 1A1.5 1.5 0 0 1 1 12.5V7.207l-.146.147a.5.5 0 0 1-.708-.708zm3 1a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708zm.707.707L5 7.207V13.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V7.207z" />
+                            </svg></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link" (click)=" gotoadmin()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor"
+                                class="bi bi-person-fill-lock" viewBox="0 0 16 16">
+                                <path
+                                    d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5v-1a2 2 0 0 1 .01-.2 4.49 4.49 0 0 1 1.534-3.693Q8.844 9.002 8 9c-5 0-6 3-6 4m7 0a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1" />
+                            </svg>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Welcome !</div>
+            <div class="masthead-heading text-uppercase">My Guide In Tunisia
+                <br>
+                <h6>Découvrir des nouveaux endroits en Tunisie & Réserver au meilleur tarif.</h6>
+            </div>
+            <div class="btn btn-primary btn-xl text-uppercase" (click)="gotoaffichage() ">Let's Discover</div>
+        </div>
+
+    </header>

@@ -1,0 +1,487 @@
+<div class="head">
+    <header class="discover">
+
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+
+
+
+            <h2 class="text"> Servitia</h2>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+
+                    <li class="nav-item">
+                        <div class="nav-link" *ngIf="role !='prestataire'" (click)="gotoaffichage()">
+                            <div class="tst">Services</div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link">
+                            <div class="tst" (click)="gotocontact()">Compte</div>
+                        </div>
+                    </li>
+                    <li class="nav-item" *ngIf="role =='prestataire'">
+                        <div class="nav-link">
+                            <div class="tst" (click)="showavis()">Services </div>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <div class="nav-link" *ngIf="role !='prestataire'" (click)="gotoabout()">
+                            <div class="tst">prestataires </div>
+                        </div>
+                    </li> -->
+                    <li class="nav-item">
+                        <div class="nav-link"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                            </svg></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                class="bi bi-houses" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.793 1a1 1 0 0 1 1.414 0l.647.646a.5.5 0 1 1-.708.708L6.5 1.707 2 6.207V12.5a.5.5 0 0 0 .5.5.5.5 0 0 1 0 1A1.5 1.5 0 0 1 1 12.5V7.207l-.146.147a.5.5 0 0 1-.708-.708zm3 1a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708zm.707.707L5 7.207V13.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V7.207z" />
+                            </svg></div>
+                    </li>
+                </ul>
+
+            </div>
+
+        </nav>
+
+
+    </header>
+</div>
+<div class="col-md-6 col-lg-7 d-flex align-items-center" *ngIf="show_encours">
+    <div class="card-body p-4 p-lg-5 text-black">
+
+        <form [formGroup]="signinForm" style="margin-top: 20px;margin-left:  420px; ">
+
+
+
+            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;" *ngIf="user_info.first_name == null ">
+                <B>Completer
+                    votre
+                    compte</B>
+            </h5>
+
+            <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"
+                *ngIf="user_info.first_name != '' && user_info.first_name != null "><B>Editer
+                    votre
+                    compte</B></h5>
+            <img *ngIf="user_info.first_name != '' && user_info.first_name != null "
+                [src]="'data:image/png;base64,' + user_info.img_url" alt="User Image"
+                style="border-radius: 50%; margin-left: 120px; width: 50%;height: 50%;" /> <br><br>
+            <label class="form-label" for="form2Example17">Nom</label>
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="prenom" id="form2Example27" formControlName="first_name"
+                    class="form-control form-control-lg" placeholder="Nom" [(ngModel)]="user_info.first_name" />
+            </div>
+            <label class="form-label" for="form2Example27">Prenom</label>
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="prenom" id="form2Example27" formControlName="last_name" [(ngModel)]="user_info.last_name"
+                    class="form-control form-control-lg" placeholder="Prenom" />
+            </div>
+
+            <label class="form-label" for="form2Example27">spécialité </label>
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="prenom" id="form2Example27" formControlName="specialite" [(ngModel)]="user_info.specialite"
+                    class="form-control form-control-lg" placeholder="spécialité" />
+            </div>
+            <label class="form-label" for="form2Example27">Descriptif</label>
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="prenom" id="form2Example27" formControlName="descriptif" [(ngModel)]="user_info.descriptif"
+                    class="form-control form-control-lg" placeholder="Descriptif" />
+            </div>
+            <label class="form-label" for="form2Example27">Prix de base</label>
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="prenom" id="form2Example27" formControlName="prix" [(ngModel)]="user_info.prix"
+                    class="form-control form-control-lg" placeholder="Prix de base" />
+            </div>
+
+
+            <label class="form-label" for="imgUpload">Photo de profil</label>
+            <div data-mdb-input-init class="form-outline mb-4">
+                <input type="file" id="imgUpload" class="form-control form-control-lg"
+                    (change)="onFileSelected($event)" />
+            </div>
+
+            <div class="pt-1 mb-4">
+                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="button"
+                    (click)="onSubmit()">Enregistrer </button>
+            </div>
+            <!-- (click)="login()" -->
+
+
+
+
+
+
+        </form>
+
+
+    </div>
+</div>
+<br /> <br />
+
+
+
+
+<div class="row d-flex justify-content-center" *ngIf="show_cmnts" id="portfolio" class="portfolio"
+    style="margin-top: 10px; margin-left: 38px; padding: 15px;">
+    <div class="pt-1 mb-4" style="margin-left: 90%;">
+        <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="button"
+            (click)="showform()">Ajouter </button>
+    </div>
+    <div class="col-md-8 col-lg-6" *ngIf="show_cmnts && showformadd">
+        <div class="card shadow-0 border" style="background-color: #f0f2f5;width: 700px;margin-left: 400px;">
+            <form [formGroup]="serviceForm" style="margin-top: 20px; margin-left: 20px;">
+
+                <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;"><B>Ajouter un service</B></h5>
+                <div style="display: flex;">
+
+                    <div style="margin-right: 50px;">
+                        <label class="form-label" for="form2Example17">Nom</label>
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <input type="prenom" id="form2Example27" formControlName="nom"
+                                class="form-control form-control-lg" placeholder="Nom" />
+
+                        </div>
+
+                    </div>
+                    <div>
+                        <label class="form-label" for="form2Example27">Description</label>
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <input type="prenom" id="form2Example27" formControlName="description"
+                                class="form-control form-control-lg" placeholder="Description" />
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div style="display: flex;">
+
+                    <div style="margin-right: 50px;">
+                        <label class="form-label" for="form2Example17">Prix</label>
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <input type="prenom" id="form2Example27" formControlName="prix"
+                                class="form-control form-control-lg" placeholder="Nom" />
+
+                        </div>
+
+                    </div>
+                    <div>
+                        <label class="form-label" for="form2Example27">Lieu</label>
+                        <div data-mdb-input-init class="form-outline mb-4">
+                            <input type="prenom" id="form2Example27" formControlName="lieux"
+                                class="form-control form-control-lg" placeholder="Lieu" />
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="pt-1 mb-4" style="margin-left: 260px;">
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block"
+                        type="button" (click)="onSubmitService()">Enregistrer </button>
+                </div>
+                <!-- (click)="login()" -->
+
+
+
+
+
+
+            </form>
+        </div>
+    </div> <br>
+
+    <div class="row portfolio-container" data-aos="fade-up">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app" *ngFor="let info of all_excursion">
+            <div class="portfolio-wrap">
+                <img src="/assets/image.png" class="img-fluid" alt="" style="width: 500px;height: 300px;">
+                <div class="portfolio-info" style="color: white;">
+                    <h4 style="color: white;">{{info.nom}}</h4>
+                    <h4 style="color: white;">{{info.description}} </h4>
+                    <!-- <p>
+              {{ info.description.slice(0,50) }}
+  
+            </p> -->
+
+
+                    <div> <b> {{info.prix}} $ </b> - {{info.lieux}} </div>
+
+
+                    <div class="portfolio-links">
+                        <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
+                            class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!--  -->
+<div *ngIf="show_effec">
+    <h1> Demandes hebergement effectué</h1> <br>
+    <table style="width: 90%; margin-left: 50px;">
+        <thead>
+            <th style="border-radius: 0.6875rem 0rem 0rem 0rem;">Date arrivé</th>
+            <th>Date Départ</th>
+            <th> Destination</th>
+
+            <th>
+                Prix
+            </th>
+            <th>
+                nom hotel
+            </th>
+            <th> Client</th>
+            <th>Status</th>
+
+            <th style="border-radius: 0rem 0.6875rem 0rem 0rem"> </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rheb of heb_demande_res_effectuer">
+                <td> {{rheb.demande.date_arrive}} </td>
+                <td> {{rheb.demande.date_depart}} </td>
+                <td>
+                    {{rheb.localisation}}
+                </td>
+                <td> {{rheb.prix}} </td>
+                <td> {{rheb.name}} </td>
+                <td> {{rheb.user_id}} </td>
+                <td>
+
+                    Effectué
+                </td>
+
+                <td>
+                    <img src="https://png.pngtree.com/element_our/20190528/ourmid/pngtree-delete-icon-image_1129289.jpg"
+                        style="cursor: pointer;" alt="avatar" width="25" height="25"
+                        (click)="deletedemande(rheb._id)" />
+                </td>
+            </tr>
+
+
+
+        </tbody>
+    </table> <br>
+
+    <h1> Demandes Excursions effectué</h1> <br>
+
+    <table style="width: 90%; margin-left: 50px;">
+        <thead>
+            <th style="border-radius: 0.6875rem 0rem 0rem 0rem;">Date arrivé</th>
+            <th>Date Départ</th>
+            <th> Destination</th>
+            <th> voyageur</th>
+            <th>
+                Prix
+            </th>
+            <th>
+                nom hotel
+            </th>
+            <th> Client</th>
+            <th>Status</th>
+
+            <th style="border-radius: 0rem 0.6875rem 0rem 0rem"> </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rex of exc_demande_res_effectuer">
+                <td> {{rex.demande.date_arrive}} </td>
+                <td> {{rex.demande.date_depart}} </td>
+                <td>
+                    {{rex.localisation}}
+                </td>
+                <td> {{rex.voyageur}} </td>
+                <td> {{rex.prix}} </td>
+                <td> {{rex.name}} </td>
+                <td> {{rex.user_id}} </td>
+                <td> Effectué </td>
+
+                <td>
+                    <img src="https://png.pngtree.com/element_our/20190528/ourmid/pngtree-delete-icon-image_1129289.jpg"
+                        style="cursor: pointer;" alt="avatar" width="25" height="25" (click)="deletedemande(rex._id)" />
+                </td>
+            </tr>
+
+
+
+        </tbody>
+    </table>
+</div>
+<div *ngIf="show_demandes">
+    <h1> Demandes Excursions</h1> <br>
+    <table style="width: 90%; margin-left: 50px;">
+        <thead>
+            <th style="border-radius: 0.6875rem 0rem 0rem 0rem;">Date</th>
+            <th>budget</th>
+            <th>Client</th>
+            <th style="border-radius: 0rem 0.6875rem 0rem 0rem"> </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rheb of all_demandes_heb">
+                <td> {{rheb.date}} </td>
+                <td> {{rheb.budget}} </td>
+
+                <td> {{rheb.user_id}} </td>
+                <td>
+                    <img src="https://png.pngtree.com/element_our/20190528/ourmid/pngtree-delete-icon-image_1129289.jpg"
+                        style="cursor: pointer;" alt="avatar" width="25" height="25"
+                        (click)="deletedemande(rheb._id)" />
+                </td>
+            </tr>
+
+
+
+        </tbody>
+    </table> <br>
+
+    <h1> Demandes hebergement </h1> <br>
+
+    <table style="width: 90%; margin-left: 50px;">
+        <thead>
+            <th style="border-radius: 0.6875rem 0rem 0rem 0rem;">Date arrivé</th>
+            <th>Date Départ</th>
+            <th> Destination</th>
+            <th> nombre adultes</th>
+            <th>
+                nombre_enfant
+            </th>
+            <th>Client</th>
+
+            <th style="border-radius: 0rem 0.6875rem 0rem 0rem"> </th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rex of all_demandes_ecu">
+                <td> {{rex.date_arrive}} </td>
+                <td> {{rex.date_depart.split('T')[0]}} </td>
+                <td>
+                    {{rex.destination}}
+                </td>
+                <td> {{rex.nombre_adultes}} </td>
+                <td> {{rex.nombre_enfant}} </td>
+
+                <td> {{rex.user_id}} </td>
+                <td>
+                    <img src="https://png.pngtree.com/element_our/20190528/ourmid/pngtree-delete-icon-image_1129289.jpg"
+                        style="cursor: pointer;" alt="avatar" width="25" height="25" (click)="deletedemande(rex._id)" />
+                </td>
+
+            </tr>
+
+
+
+        </tbody>
+    </table>
+</div>
+<div *ngIf="show_agences">
+    <h1> Les agences</h1> <br>
+    <table style="width: 90%; margin-left: 50px;">
+        <thead>
+            <th style="border-radius: 0.6875rem 0rem 0rem 0rem;">name</th>
+            <th>Télephone</th>
+            <th style="border-radius: 0rem 0.6875rem 0rem 0rem"> url</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rheb of agences">
+
+                <td> {{rheb.name}} </td>
+                <td> {{rheb.phone}} </td>
+
+                <td> <a [href]="rheb.url">{{rheb.url}} </a></td>
+
+
+
+            </tr>
+
+
+
+        </tbody>
+    </table> <br>
+
+
+</div>
+
+<div *ngIf="show_users">
+    <h1> Les utilisateurs</h1> <br>
+    <table style="width: 90%; margin-left: 50px;">
+        <thead>
+            <th style="border-radius: 0.6875rem 0rem 0rem 0rem;">nom</th>
+            <th>prenom</th>
+            <th>Télephone</th>
+            <th>Adresse mail</th>
+            <th style="border-radius: 0rem 0.6875rem 0rem 0rem"> adresse</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of all_users">
+
+                <td> {{user.nom}} </td>
+                <td> {{user.prenom}} </td>
+
+                <td> {{user.telephone}} </td>
+                <td> {{user.adresse_mail}} </td>
+                <td> {{user.adresse}} </td>
+
+
+
+
+            </tr>
+
+
+
+        </tbody>
+    </table> <br>
+
+
+</div>
+
+
+
+<div class="popup" *ngIf="showPopup && show_encours">
+    <div>
+        <div style="float: right;margin-left: 50px;" (click)="closePopup()">
+            <img class="close-button" src="/assets/close.png" width="50%" height="50%" />
+        </div>
+        <div>
+            <h1>Effectuer une réservation</h1>
+
+            <form (ngSubmit)="onSubmit()">
+                <div>
+                    <input type="file" (change)="onFileSelected($event)">
+                </div>
+                <br>
+                <div>
+                    <button type="submit" class="button" style="float: right;">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br><br><br><br>
+<table>
+    <tr>
+        <td>
+            <div style="height: 500px; width:500px"> <canvas id="piechart"></canvas> </div>
+        </td>
+        <td width="400"></td>
+        <td>
+            <div style="height: 300px; width:300px; margin-top: -250px;"> <canvas id="doughnut"></canvas> </div>
+        </td>
+    </tr>
+</table>

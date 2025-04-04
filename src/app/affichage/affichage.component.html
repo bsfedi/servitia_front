@@ -1,0 +1,228 @@
+<div class="head">
+  <header class="discover">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+
+
+
+
+      <h2 class="text"> Servitia</h2>
+
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+
+          <li class="nav-item">
+            <div class="nav-link" *ngIf="role !='prestataire'" (click)="gotoaffichage()">
+              <div class="tst">Services</div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link">
+              <div class="tst" (click)="gotocontact()">Compte</div>
+            </div>
+          </li>
+          <li class="nav-item" *ngIf="role =='prestataire'">
+            <div class="nav-link">
+              <div class="tst" (click)="showavis()">Services </div>
+            </div>
+          </li>
+          <!-- <li class="nav-item">
+            <div class="nav-link" *ngIf="role !='prestataire'" (click)="gotoabout()">
+              <div class="tst">prestataires </div>
+            </div>
+          </li> -->
+          <li class="nav-item">
+            <div class="nav-link"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+              </svg></div>
+          </li>
+          <li class="nav-item">
+            <div class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-houses"
+                viewBox="0 0 16 16">
+                <path
+                  d="M5.793 1a1 1 0 0 1 1.414 0l.647.646a.5.5 0 1 1-.708.708L6.5 1.707 2 6.207V12.5a.5.5 0 0 0 .5.5.5.5 0 0 1 0 1A1.5 1.5 0 0 1 1 12.5V7.207l-.146.147a.5.5 0 0 1-.708-.708zm3 1a1 1 0 0 1 1.414 0L12 3.793V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v3.293l1.854 1.853a.5.5 0 0 1-.708.708L15 8.207V13.5a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4 13.5V8.207l-.146.147a.5.5 0 1 1-.708-.708zm.707.707L5 7.207V13.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5V7.207z" />
+              </svg></div>
+          </li>
+        </ul>
+
+      </div>
+
+    </nav>
+
+
+  </header>
+</div>
+<div class="popup" *ngIf="showPopup">
+  <div class="popup-content">
+    <div style="float: right" (click)="closePopup()">
+      x
+    </div>
+    <div>
+      <h3>Demande réservation</h3>
+      <form style="display: flex" [formGroup]="myForm2">
+        <div class="form-section">
+          <div class="grid-container">
+            <div class="grid-item">
+              <input type="date" id="email" placeholder="Prénom" name="email" required formControlName="date_arrive" />
+            </div>
+            <div class="grid-item">
+              <input type="date" id="email" placeholder="Nom" name="email" required formControlName="date_depart" />
+            </div>
+            <div class="grid-item">
+              <input type="text" id="email" placeholder="Nombre d'adultes" name="email" required
+                formControlName="chambres" />
+            </div>
+            <div class="grid-item">
+              <input type="email" id="email" placeholder="Nombre d'enfants" name="email" required
+                formControlName="nombre_enfant" />
+            </div>
+
+          </div>
+          <br />
+          <div class="buttons">
+            <button type="submit" class="button" (click)="reserve()"
+              style="color: white; background-color:rgb(245, 165, 47) ; border-radius: 2rem;justify-content: center;padding: 5px;margin-left: 140px;">
+              <div class="inscrire">Réserver</div>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- <div class="d-flex justify-content-center" *ngIf="!showPopup">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" (click)="showall()" style="cursor: pointer;" style="color: black;"
+            *ngIf="show_all">All</a>
+          <a class="nav-link" (click)="showall()" *ngIf="!show_all">All</a>
+        </li>
+
+        <li class="nav-item" (click)="showexcurtiondata()">
+          <a class="nav-link" *ngIf="!showexcurtion">Excursions & Randonnées</a>
+          <a class="nav-link" style="color: black;" *ngIf="showexcurtion"> Excursions & Randonnées </a>
+        </li>
+        <li class="nav-item" (click)="showhoteldata()">
+          <a class="nav-link" *ngIf="!hebergement">Hébergement</a>
+          <a class="nav-link" style="color: black;" *ngIf="hebergement"> Hébergement </a>
+
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+</div> -->
+<section id="portfolio" class="portfolio">
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <input type="prenom" [(ngModel)]="searchQuery" placeholder="recherche avec le nom de service ou contact"
+          class="form-control" />
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="row portfolio-container" data-aos="fade-up" *ngIf="show_all && !showPopup">
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" *ngFor="let info of filteredInformations()">
+        <div class="portfolio-wrap">
+          <img src="/assets/ChatGPT Image 3 avr. 2025, 23_14_59.png" class="img-fluid" alt=""
+            style="width: 500px;height: 300px;">
+          <div class="portfolio-info" style="color: rgb(11, 12, 12);">
+            <h4>{{info.nom}}</h4>
+            <h4> {{info.description}} </h4>
+            <p> <b>{{info.prix}} $ </b> - {{info.lieux}}</p>
+            <div style="color: #100f0f;"> <b> Contact : </b> {{info.user_info.first_name}} {{info.user_info.last_name}}
+              <br> {{info.user_info.email}}
+            </div>
+            <div class="portfolio-links">
+              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                title="App 1"><i class="bx bx-plus"></i></a>
+              <!-- <a title="More Details" (click)="showpopup(info)"> <button
+                  style="color: white; background-color:rgb(245, 165, 47) ; border-radius: 2rem;">
+                  Réserver</button><i class="bx bx-link"></i></a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="row portfolio-container" data-aos="fade-up" *ngIf="showexcurtion && !showPopup">
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" *ngFor="let info of all_excursion">
+        <div class="portfolio-wrap">
+          <img [src]="info.img_src" class="img-fluid" alt="" style="width: 500px;height: 300px;">
+          <div class="portfolio-info">
+            <h4>{{info.name}}</h4>
+            <h4>{{info.voyageur}} </h4>
+            <!-- <p>
+              {{ info.description.slice(0,50) }}
+
+            </p> -->
+
+            <p> <b>
+                <div *ngIf="info.date"> {{info.date}} - </div>
+                <div *ngIf="info.localisation"> {{info.localisation}} </div>
+                <div style="color: white;"> Agence {{info.agence}}</div>
+              </b> </p>
+            <div class="portfolio-links">
+              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                title="App 1"><i class="bx bx-plus"></i></a>
+              <a title="More Details" (click)="showpopup(info)"> <button
+                  style="color: white; background-color:rgb(245, 165, 47) ; border-radius: 2rem;">
+                  Réserver</button><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+    <div class="row portfolio-container" data-aos="fade-up" *ngIf="hebergement && !showPopup">
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" *ngFor="let info of all_hotels">
+        <div class="portfolio-wrap">
+          <img [src]="info.img_src" class="img-fluid" alt="" style="width: 500px;height: 300px;">
+          <div class="portfolio-info">
+            <h4>{{info.name}}</h4>
+            <h4>{{info.type}} </h4>
+            <!-- <p>
+              {{ info.description.slice(0,50) }}
+
+            </p> -->
+
+            <p> <b> {{info.prix}} - {{info.localisation}}</b> </p>
+            <div style="color: white;"> Agence {{info.agence}}</div>
+            <div class="portfolio-links">
+              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                title="App 1"><i class="bx bx-plus"></i></a>
+              <a title="More Details" (click)="showpopup(info)"> <button
+                  style="color: white; background-color:rgb(245, 165, 47) ; border-radius: 2rem;">
+                  Réserver</button><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+<!-- <section class="ft">
+  <app-footer></app-footer>
+</section> -->

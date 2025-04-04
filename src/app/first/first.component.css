@@ -1,0 +1,12 @@
+.text{
+    font-family: 'Brush Script MT', cursive;
+
+    color: orangered
+    ;
+}
+li{
+    cursor: pointer;
+}
+svg{
+    color: orangered;
+}

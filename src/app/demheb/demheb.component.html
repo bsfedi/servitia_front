@@ -1,0 +1,226 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+
+
+  <div class="card mx-4 mx-md-5 shadow-5-strong" *ngIf="user_id" style="
+          margin-top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+    <div class="card-body py-5 px-md-5">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+
+          <h2>Options de votre voyage</h2>
+          <h6>Hotels & Maisons d'hotes</h6>
+          <form (ngSubmit)="submitForm()" [formGroup]="myForm2">
+
+
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <select class="form-select" aria-label="Default select example" formControlName="destination">
+                  <option selected>Destination :</option>
+                  <option value="Ariana">Arinana </option>
+                  <option value="beja">Beja </option>
+                  <option value="ben arous">Ben Arous</option>
+                  <option value="bizerte">Bizerte</option>
+                  <option value="gabes">Gabés</option>
+                  <option value="hammamet"> hammamet</option>
+                  <option value="gafsa">Gafsa</option>
+                  <option value="jendouba">Jendouba</option>
+                  <option value="kairouan">Kairouan</option>
+                  <option value="kasserine">Kasserine</option>
+                  <option value="kebili">Kébili</option>
+                  <option value="Le kef"> Kef</option>
+                  <option value="mahdia">Mahdia</option>
+                  <option value="manouba">Manouba</option>
+                  <option value="mednine">Médenine</option>
+                  <option value="monastir">Monastir</option>
+                  <option value="nabeul">Nabeul</option>
+                  <option value="sfax">Sfax</option>
+                  <option value="sidibouzid">Sidi Bouzid</option>
+                  <option value="siliana">Siliana</option>
+                  <option value="sousse">Sousse</option>
+                  <option value="tataouin">Tataouine</option>
+                  <option value="touzeur">Touzeur</option>
+                  <option value="tn">Tunis</option>
+                  <option value="zagh">Zaghouan</option>
+
+                </select>
+
+              </div>
+            </div>
+            <!-- <div class="col-md-6 mb-4">
+              <div data-mdb-input-init class="form-outline">
+                <input type="text" id="form3Example1" class="form-control" placeholder="Nom-Hotel" />
+                <label class="form-label" for="form3Example1">Nom De l'Hotel</label>
+              </div>
+            </div> -->
+
+
+
+            <div class="row">
+
+
+
+              <div class="input-group date" id="datepicker" style="margin-bottom: 30px;">
+                <label for="date" style="margin-top: 5px;">Date D'arrivée </label>
+                <input type="date" class="form-control" id="date" style="width: 200px; margin-left: 50px;"
+                  formControlName="date_arrive" />
+
+
+              </div>
+
+              <div class="row">
+
+                <div class="input-group date" id="datepicker" style="margin-bottom: 30px;">
+                  <label for="date" style="margin-top: 5px;">Date De Départ </label>
+                  <input type="date" class="form-control" id="date" style="width: 200px; margin-left: 45px;"
+                    formControlName="date_depart" />
+
+
+                </div>
+
+              </div>
+              <div>
+
+
+
+                <div class="col-md-6 mb-4" style="margin-left: -38px;">
+                  <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" for="form3Example1">Nombre d'adultes </label> <svg
+                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
+                    </svg>
+                    <input id="ticketNum" type="number" name="ticketNum" value="0" formControlName="chambres" />
+
+                  </div>
+                </div>
+
+
+
+                <div class="col-md-6 mb-4" style="margin-left: -38px;">
+                  <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" for="form3Example1">Nombre d'enfants</label> <svg
+                      xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people"
+                      viewBox="0 0 16 16">
+                      <path
+                        d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4" />
+                    </svg>
+                    <input id="ticketNum" type="number" name="ticketNum" value="0" formControlName="nombre_enfant" />
+
+
+
+                  </div>
+                </div>
+              </div>
+              <form [formGroup]="formulaire" *ngIf="informations">
+                <div class="row">
+                  <label for="customRange1" class="form-label">Votre Budget est entre :</label>
+                  <input type="range" class="form-range" id="customRange1" formControlName="budget" min="1" max="15000"
+                    value="0" step="1">
+                  <div class="range-intervals">
+                    <span>{{formulaire.value.budget }} DT</span>
+
+                  </div>
+                </div>
+              </form>
+
+
+
+
+
+              <div class="pt-1 mb-4" *ngIf="!informations">
+                <button class="btn btn-dark btn-lg btn-block" type="submit" (click)="scrape()">Envoyer !</button>
+              </div>
+              <div class="pt-1 mb-4">
+                <button class="btn btn-dark btn-lg btn-block" type="submit" *ngIf="informations"
+                  (click)="filterByPrice(formulaire.value.budget )">filter by budget
+                  !</button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mx-4 mx-md-5 shadow-5-strong" *ngIf="!user_id">
+    Vous devez être authentifié pour faire un filter
+  </div>
+
+
+
+
+
+
+</section>
+
+<section id="portfolio" class="portfolio" style="padding: 1rem;">
+
+  <div class="container">
+
+
+    <div class="row portfolio-container" data-aos="fade-up">
+
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" *ngFor="let info of filtred_item">
+        <div class="portfolio-wrap" *ngIf="isfiltred">
+          <img [src]="info.img_src" class="img-fluid" alt="" style="width: 500px;height: 300px;">
+          <div class="portfolio-info">
+            <h4>{{info.name}}</h4>
+            <h4>{{info.logement}} </h4>
+            <!-- <p>
+              {{ info.description.slice(0,50) }}
+  
+            </p> -->
+
+            <p> <b> {{info.prix}} </b> </p>
+            <div style="color: white;"> Agence {{info.agence}}</div>
+            <div class="portfolio-links">
+              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                title="App 1"><i class="bx bx-plus"></i></a>
+              <a title="More Details" (click)="reserve(info)"> <button
+                  style="color: white; background-color:rgb(245, 165, 47) ; border-radius: 2rem;">
+                  Réserver</button><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app" *ngFor="let info of informations">
+        <div class="portfolio-wrap" *ngIf="!isfiltred">
+          <img [src]="info.img_src" class="img-fluid" alt="" style="width: 500px;height: 300px;">
+          <div class="portfolio-info">
+            <h4>{{info.name}}</h4>
+            <h4>{{info.logement}} </h4>
+            <!-- <p>
+              {{ info.description.slice(0,50) }}
+  
+            </p> -->
+
+            <p> <b> {{info.prix}} </b> </p>
+            <div style="color: white;"> Agence {{info.agence}}</div>
+            <div class="portfolio-links">
+              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                title="App 1"><i class="bx bx-plus"></i></a>
+              <a title="More Details" (click)="reserve(info)"> <button
+                  style="color: white; background-color:rgb(245, 165, 47) ; border-radius: 2rem;">
+                  Réserver</button><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<app-footer></app-footer>
+<!-- Section: Design Block -->

@@ -1,0 +1,802 @@
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    margin-top: 1rem;
+}
+
+.card-single {
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.card-single div:last-child span {
+    color: #175781;
+    font-size: 3rem;
+}
+
+.card-single div:first-child span {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+
+
+.card-single:last-child {
+    color: #175781;
+}
+
+
+
+@media only screen and (max-width: 960px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .cards {
+        grid-template-columns: 100%;
+    }
+
+
+}
+
+
+header {
+
+    padding-bottom: 4rem;
+    text-align: center;
+    color: #fff;
+    background-image: url("/assets/img/bl.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+.text {
+    font-family: 'Brush Script MT', cursive;
+
+    color: orangered;
+}
+
+li {
+    cursor: pointer;
+
+}
+
+svg {
+    color: orangered;
+}
+
+.tst {
+    color: black;
+}
+
+.portfolio .portfolio-item {
+    margin-bottom: 30px;
+}
+
+.portfolio #portfolio-flters {
+    padding: 0;
+    margin: 0 auto 20px auto;
+    list-style: none;
+    text-align: center;
+}
+
+.portfolio #portfolio-flters li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 15px 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #444444;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
+    color: #fff;
+    background: #94c045;
+}
+
+.portfolio #portfolio-flters li:last-child {
+    margin-right: 0;
+}
+
+.portfolio .portfolio-wrap {
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: rgba(60, 65, 51, 0.6);
+}
+
+.portfolio .portfolio-wrap::before {
+    content: "";
+    background: rgba(60, 65, 51, 0.6);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all ease-in-out 0.3s;
+    z-index: 2;
+    opacity: 0;
+}
+
+.portfolio .portfolio-wrap img {
+    transition: all ease-in-out 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-info {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    transition: all ease-in-out 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h4 {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.portfolio .portfolio-wrap .portfolio-info p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+}
+
+.portfolio .portfolio-wrap .portfolio-links {
+    text-align: center;
+    z-index: 4;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+    color: #fff;
+    margin: 0 5px 0 0;
+    font-size: 28px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+    color: #c0da91;
+}
+
+.portfolio .portfolio-wrap:hover::before {
+    opacity: 1;
+}
+
+.portfolio .portfolio-wrap:hover img {
+    transform: scale(1.2);
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+    opacity: 1;
+}
+
+.breadcrumbs {
+    padding: 0;
+    margin-top: 0%;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Segoe Print', sans-serif;
+    color: black;
+
+}
+
+h6 {
+    font-family: 'Segoe Print', sans-serif;
+    color: black;
+}
+
+.tst {
+    font-family: cursive;
+    ;
+}
+
+.row {
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-0.5* var(--bs-gutter-x));
+    margin-left: calc(-0.5* var(--bs-gutter-x));
+}
+
+
+/* You can add global styles to this file, and also import other style files */
+button {
+    cursor: pointer;
+}
+
+.info-msg,
+.success-msg,
+.warning-msg,
+.error-msg {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.info-msg {
+    color: #059;
+    background-color: #bef;
+}
+
+.success-msg {
+    color: #270;
+    background-color: #dff2bf;
+}
+
+.historique {
+    border-color: #EAE3D5;
+}
+
+.warning-msg {
+    color: #9f6000;
+    background-color: #feefb3;
+}
+
+.error-msg {
+    color: #d8000c;
+    background-color: #ffbaba;
+}
+
+.error {
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+
+}
+
+div {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+
+    text-align: center;
+}
+
+@media screen and (min-width: 375px) and (max-width: 700px) {
+
+    .title {
+        margin-top: 7px;
+
+        border-radius: 0.5rem;
+        font-weight: bold;
+        padding: 5px;
+        font-size: 1.25rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        letter-spacing: 0.0225rem;
+        margin-bottom: 20px;
+        flex-shrink: 0;
+        /* 2.25rem */
+    }
+
+    /* Hide all table cells except the first two and the last one */
+    table th:not(:nth-child(-n+2)):not(:last-child),
+    table td:not(:nth-child(-n+2)):not(:last-child) {
+        display: none;
+    }
+}
+
+.title {
+    margin-top: 7px;
+
+    border-radius: 0.5rem;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 1.75rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: 0.0225rem;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    /* 2.25rem */
+}
+
+div.dropmenu :hover {
+    background-color: #d5d3d3;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+table {
+    overflow-x: auto;
+    border-radius: 0.6875rem 0.6875rem 0rem 0rem;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    padding: 5px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.loader {
+    border: 16px solid #f3f3f3;
+    /* Light grey */
+    border-top: 16px solid black;
+    /* Dark Green */
+    border-radius: 50%;
+    width: 120px;
+    margin: 255px 255px 255px 775px;
+    height: 120px;
+    animation: spinloader 2s linear infinite;
+}
+
+.loader img {
+    height: 120px;
+
+    width: 120px;
+    animation: spinlogo 2s linear infinite;
+}
+
+@keyframes spinloader {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinlogo {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 700px) {}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
+th,
+td {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+
+
+}
+
+td {
+    padding: 7px 7px;
+}
+
+th {
+    /* border-radius: 0.6875rem 0.6875rem 0rem 0rem; */
+    background: #f2c009;
+    padding: 12px 15px;
+    color: white;
+    font-weight: normal;
+}
+
+tr:hover {
+    background-color: #E5E2D7;
+}
+
+
+
+/* Custom checkbox styling */
+input[type="checkbox"] {
+    /* You would include your custom checkbox styling here */
+}
+
+/* Status color coding - assuming 'En attente' as yellow, 'Nouvelle' as green */
+tr td:first-child:contains("En attente") {
+    background-color: #fff3cd;
+    color: #856404;
+    text-align: center;
+}
+
+tr td:first-child:contains("Nouvelle") {
+    background-color: #d4edda;
+    color: #155724;
+    text-align: center;
+}
+
+/* Adjust the ID column width */
+
+
+
+
+.portfolio .portfolio-item {
+    margin-bottom: 30px;
+}
+
+.portfolio #portfolio-flters {
+    padding: 0;
+    margin: 0 auto 20px auto;
+    list-style: none;
+    text-align: center;
+}
+
+.portfolio #portfolio-flters li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 15px 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #444444;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
+    color: #fff;
+    background: #94c045;
+}
+
+.portfolio #portfolio-flters li:last-child {
+    margin-right: 0;
+}
+
+/* Style for the 'En attente' and 'Nouvelle' labels */
+.status-label {
+    padding: 2px 5px;
+    border-radius: 5px;
+    color: white;
+}
+
+.status-label.en-attente {
+    background-color: #ffc107;
+    /* Assuming yellow for 'En attente' */
+}
+
+.status-label.nouvelle {
+    background-color: #28a745;
+    /* Assuming green for 'Nouvelle' */
+}
+
+@media screen and (min-width: 375px) and (max-width: 700px) {
+    .dropdown-content {
+        margin-left: -130px;
+    }
+}
+
+
+
+
+.text {
+    font-family: 'Brush Script MT', cursive;
+
+    color: orangered;
+}
+
+li {
+    cursor: pointer;
+
+}
+
+svg {
+    color: orangered;
+}
+
+.tst {
+    color: black;
+}
+
+.portfolio .portfolio-item {
+    margin-bottom: 30px;
+}
+
+.portfolio #portfolio-flters {
+    padding: 0;
+    margin: 0 auto 20px auto;
+    list-style: none;
+    text-align: center;
+}
+
+.portfolio #portfolio-flters li {
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 15px 10px 15px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #444444;
+    margin-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.portfolio #portfolio-flters li:hover,
+.portfolio #portfolio-flters li.filter-active {
+    color: #fff;
+    background: #94c045;
+}
+
+.portfolio #portfolio-flters li:last-child {
+    margin-right: 0;
+}
+
+.portfolio .portfolio-wrap {
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    background: rgba(60, 65, 51, 0.6);
+}
+
+.portfolio .portfolio-wrap::before {
+    content: "";
+    background: rgba(60, 65, 51, 0.6);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all ease-in-out 0.3s;
+    z-index: 2;
+    opacity: 0;
+}
+
+.portfolio .portfolio-wrap img {
+    transition: all ease-in-out 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-info {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    transition: all ease-in-out 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.portfolio .portfolio-wrap .portfolio-info h4 {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.portfolio .portfolio-wrap .portfolio-info p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    font-style: italic;
+}
+
+.portfolio .portfolio-wrap .portfolio-links {
+    text-align: center;
+    z-index: 4;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a {
+    color: #fff;
+    margin: 0 5px 0 0;
+    font-size: 28px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap .portfolio-links a:hover {
+    color: #c0da91;
+}
+
+.portfolio .portfolio-wrap:hover::before {
+    opacity: 1;
+}
+
+.portfolio .portfolio-wrap:hover img {
+    transform: scale(1.2);
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+    opacity: 1;
+}
+
+.breadcrumbs {
+    padding: 0;
+    margin-top: 0%;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Segoe Print', sans-serif;
+    color: black;
+
+}
+
+h6 {
+    font-family: 'Segoe Print', sans-serif;
+    color: black;
+}
+
+.popup {
+    position: fixed;
+    top: 200px;
+    left: 450px;
+    width: 40%;
+    height: 50%;
+    background: #f2c009;
+    display: flex;
+    border-radius: 2rem;
+    padding: 50px;
+}
+
+.button {
+    width: 8.04313rem;
+    height: 3.61006rem;
+    flex-shrink: 0;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 0.5rem;
+    border: 1px solid #1e1e1e;
+    background: #fff;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+input[type="file"],
+input[type="number"] {
+    width: 32.04313rem;
+    height: 2.61006rem;
+    flex-shrink: 0;
+
+    padding: 8px 8px 40px 8px;
+    margin-top: 10px;
+
+    border-radius: 0.5rem;
+    border: 1px solid #1e1e1e;
+
+    background: #fff;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.popup-content {
+    width: 25.6875rem;
+    margin-left: 50px;
+    height: 38.4375rem;
+
+    border-radius: 2.125rem;
+    background: white;
+    padding: 30px;
+    margin-top: 10px;
+}
+
+.popup-content1 {
+    width: 58.6875rem;
+    height: 36.4375rem;
+    margin-left: 50px;
+    border-radius: 2.125rem;
+    background: white;
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.popup-content-validation {
+    width: 35.6875rem;
+    margin-left: 50px;
+    height: 32.4375rem;
+    border-radius: 6.125rem;
+    background: rgb(255, 254, 254);
+    padding: 30px;
+    margin-top: 30px;
+}
+
+
+select,
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"] {
+    width: 8.04313rem;
+    height: 3.61006rem;
+    flex-shrink: 0;
+
+    padding: 8px;
+    margin-top: 10px;
+
+    border-radius: 0.5rem;
+    border: 1px solid #1e1e1e;
+
+    background: #fff;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.tst {
+    font-family: cursive;
+    ;
+}

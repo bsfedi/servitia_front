@@ -1,0 +1,16 @@
+section{
+    margin-bottom: 40%;
+}
+span{
+    font-family: 'Segoe Print', sans-serif;
+
+}
+h6{
+    color: blue;
+    cursor: pointer;
+}
+img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+}
