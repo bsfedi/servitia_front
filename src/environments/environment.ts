@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  baseUrl: 'https://servitia-backend.onrender.com/',// Change this to your local development server URL
+  baseUrl: 'https://servitia-backend-1.onrender.com/',// Change this to your local development server URL
   default: ''
 };
 
